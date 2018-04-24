@@ -37,8 +37,10 @@ public class PizzaMemDaoTest {
 	@Test
 	public void testDeletePizza()
 	{
+		int oldlength = p.findAllPizzas().size();
 		p.deletePizza("PEP");
-		assertTrue(p.findAllPizzas().size() == 7);
+		
+		assertTrue(p.findAllPizzas().size() == oldlength-1);
 	}
 	
 	@After
