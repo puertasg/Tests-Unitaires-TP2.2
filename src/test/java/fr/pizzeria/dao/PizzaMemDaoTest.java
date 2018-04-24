@@ -43,6 +43,29 @@ public class PizzaMemDaoTest {
 		assertTrue(p.findAllPizzas().size() == oldlength-1);
 	}
 	
+	@Test
+	public void testUpdatePizza()
+	{
+		Pizza pi = new Pizza("TES", "Test", 11.11);
+		p.updatePizza("PEP", pi);
+		
+		assertTrue(p.findAllPizzas().get(0).getCode() == "TES");
+		assertTrue(p.findAllPizzas().get(0).getLibelle() == "Test");
+		assertTrue(p.findAllPizzas().get(0).getPrix() == 11.11);
+	}
+	
+	@Test
+	public void testFindPizzaByCode()
+	{
+		assertTrue(p.findPizzaByCode("PEP") instanceof Pizza);
+	}
+	
+	@Test
+	public void testPizzaExists()
+	{
+		assertTrue(p.pizzaExists("PEP") == true);
+	}
+	
 	@After
 	public void tearDown()
 	{
