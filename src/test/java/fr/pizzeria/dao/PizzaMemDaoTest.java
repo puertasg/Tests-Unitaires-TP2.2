@@ -27,11 +27,11 @@ public class PizzaMemDaoTest {
 	@Test
 	public void testSaveNewPizza()
 	{
-		int oldLength = p.findAllPizzas().size();
+		int oldlength = p.findAllPizzas().size();
 		Pizza pi = new Pizza("TES", "Test", 11.11);
 		p.saveNewPizza(pi);
 		
-		assertTrue(p.findAllPizzas().size() == oldLength+1);
+		assertTrue(p.findAllPizzas().size() == oldlength+1);
 	}
 	
 	@Test
